@@ -12,19 +12,15 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-/**
- * Created by AR-Laptop on 8/8/2017.
- */
-
-public class FragmentURL extends Fragment{
+public class FragmentURL extends Fragment {
     private static String url;
     View view;
     private ImageView mImageView;
     EditText urlText;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        view = inflater.inflate(R.layout.fragment_url,container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        view = inflater.inflate(R.layout.fragment_url, container, false);
         mImageView = (ImageView) view.findViewById(R.id.imageView7);
         mImageView.setImageResource(R.drawable.url);
         urlText = (EditText) view.findViewById(R.id.url);
@@ -48,10 +44,10 @@ public class FragmentURL extends Fragment{
         return view;
     }
 
-    public static String getURL(){
-        if(!(url==null)){
+    public static String getURL() {
+        if (!(url == null)) {
             return url;
-        }else {
+        } else {
             return "";
         }
     }
