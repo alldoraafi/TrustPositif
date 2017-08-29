@@ -2,7 +2,6 @@ package com.example.trustpositif;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -129,18 +128,18 @@ public class FragmentSubmit extends Fragment implements EasyPermissions.Permissi
             chooseAccount();
         } else if (!isDeviceOnline()) {
             showMessage("Pastikan anda terhubung dengan internet.");
-        } else if(isEmpty(FragmentURL.getURL())){
+        } else if (isEmpty(FragmentURL.getURL())) {
             showMessage("Anda belum mengisi URL.");
-        } else if(isEmpty(FragmentKategori.getKategori())){
+        } else if (isEmpty(FragmentKategori.getKategori())) {
             showMessage("Anda belum memilih Kategori.");
         } else {
-            new MakeRequestTask(FragmentSubmit.this.getActivity(), mCredential).execute();
+            new MakeRequestTask(mCredential).execute();
         }
     }
 
-//    private static boolean isEmpty(EditText editText) {
-//        return editText.getText().toString().trim().length() <= 0;
-//    }
+    private static boolean isEmpty(String text) {
+        return text.length() <= 0;
+    }
 
     @AfterPermissionGranted(REQUEST_PERMISSION_GET_ACCOUNTS)
     private void chooseAccount() {
@@ -324,16 +323,14 @@ public class FragmentSubmit extends Fragment implements EasyPermissions.Permissi
 
         private com.google.api.services.gmail.Gmail mService = null;
         private Exception mLastError = null;
-        private FragmentActivity activity;
 
-        MakeRequestTask(FragmentActivity activity, GoogleAccountCredential credential) {
+        MakeRequestTask(GoogleAccountCredential credential) {
             HttpTransport transport = AndroidHttp.newCompatibleTransport();
             JsonFactory jsonFactory = JacksonFactory.getDefaultInstance();
             mService = new com.google.api.services.gmail.Gmail.Builder(
                     transport, jsonFactory, credential)
                     .setApplicationName("Gmail API Android Quickstart")
                     .build();
-            this.activity = activity;
         }
 
         /**
