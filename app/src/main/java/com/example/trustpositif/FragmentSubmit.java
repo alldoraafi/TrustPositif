@@ -69,7 +69,6 @@ public class FragmentSubmit extends Fragment implements EasyPermissions.Permissi
     static final int REQUEST_GOOGLE_PLAY_SERVICES = 2002;
     static final int REQUEST_PERMISSION_GET_ACCOUNTS = 2003;
 
-    //    private ArrayList<String> pathList;
     private static final String PREF_ACCOUNT_NAME = "accountName";
     private static final String[] SCOPES = {
             GmailScopes.GMAIL_LABELS,
