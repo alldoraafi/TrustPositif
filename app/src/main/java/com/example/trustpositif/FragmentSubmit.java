@@ -60,7 +60,6 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
 import static android.app.Activity.RESULT_OK;
-import static android.text.TextUtils.isEmpty;
 
 public class FragmentSubmit extends Fragment implements EasyPermissions.PermissionCallbacks {
     GoogleAccountCredential mCredential;
