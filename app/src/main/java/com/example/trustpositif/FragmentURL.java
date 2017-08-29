@@ -49,6 +49,10 @@ public class FragmentURL extends Fragment{
     }
 
     public static String getURL(){
-        return url;
+        if(!(url==null)){
+            return url;
+        }else {
+            return "";
+        }
     }
 }

@@ -61,6 +61,7 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
 import static android.app.Activity.RESULT_OK;
+import static android.text.TextUtils.isEmpty;
 
 public class FragmentSubmit extends Fragment implements EasyPermissions.PermissionCallbacks {
     GoogleAccountCredential mCredential;
@@ -127,10 +128,11 @@ public class FragmentSubmit extends Fragment implements EasyPermissions.Permissi
         } else if (mCredential.getSelectedAccountName() == null) {
             chooseAccount();
         } else if (!isDeviceOnline()) {
-            showMessage("No network available!");
-//        } else if (isEmpty(editTextSubject)) {
-//            showMessage("Subject is required!"); Jika Kategori Kosong
-//        }
+            showMessage("Pastikan anda terhubung dengan internet.");
+        } else if(isEmpty(FragmentURL.getURL())){
+            showMessage("Anda belum mengisi URL.");
+        } else if(isEmpty(FragmentKategori.getKategori())){
+            showMessage("Anda belum memilih Kategori.");
         } else {
             new MakeRequestTask(FragmentSubmit.this.getActivity(), mCredential).execute();
         }

@@ -67,6 +67,13 @@ public class FragmentScreenshot extends Fragment {
     }
 
     public static ArrayList<String> getImage(){
-        return pathList;
+        if(!(pathList==null)){
+            return pathList;
+        }else {
+            ArrayList<String> returnPathlist;
+            returnPathlist = new ArrayList<>();
+            return returnPathlist;
+        }
+
     }
 }
