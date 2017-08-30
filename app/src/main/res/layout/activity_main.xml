@@ -63,6 +63,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/trust" />
 
+    <ImageView
+        android:id="@+id/faqButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
+        app:layout_constraintRight_toRightOf="@+id/trustImage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/faq" />
+
     <android.support.constraint.Guideline
         android:id="@+id/guideline9"
         android:layout_width="wrap_content"
@@ -156,16 +168,6 @@
             android:gravity="center"
             android:text="Keterangan" />
 
-        <RadioButton
-            android:id="@+id/radioButton5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:button="@android:color/transparent"
-            android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
-            android:gravity="center"
-            android:text="Submit" />
     </RadioGroup>
 
 </android.support.constraint.ConstraintLayout>

@@ -36,11 +36,13 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
+import android.widget.ExpandableListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
@@ -84,6 +86,9 @@ public class FragmentSubmit extends Fragment implements EasyPermissions.Permissi
     Button secondButton;
     TextView mOutputText;
     ProgressDialog mProgress;
+    private ExpandListAdapter ExpAdapter;
+    private ArrayList<Group> ExpListItems;
+    private ExpandableListView ExpandList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -104,6 +109,11 @@ public class FragmentSubmit extends Fragment implements EasyPermissions.Permissi
         mCredential = GoogleAccountCredential.usingOAuth2(
                 FragmentSubmit.this.getActivity().getApplicationContext(), Arrays.asList(SCOPES))
                 .setBackOff(new ExponentialBackOff());
+
+        ExpandList = (ExpandableListView) view.findViewById(R.id.exp_list);
+        ExpListItems = SetStandardGroups();
+        ExpAdapter = new ExpandListAdapter(FragmentSubmit.this.getActivity(), ExpListItems);
+        ExpandList.setAdapter(ExpAdapter);
 
         return view;
     }
@@ -494,4 +504,43 @@ public class FragmentSubmit extends Fragment implements EasyPermissions.Permissi
             }
         }
     }
+
+
+    //set group item
+    public ArrayList<Group> SetStandardGroups() {
+
+        String group_names[] = {"Screenshot 1", "Screenshot 2", "Screenshot 3"};
+
+        String country_names[] = {"Brazil", "Mexico", "Croatia"};
+
+        int Images[] = {R.drawable.kat, R.drawable.kat2,
+                R.drawable.kat3};
+
+        ArrayList<Group> list = new ArrayList<Group>();
+
+        ArrayList<Child> ch_list;
+
+        int size = 1;
+        int j = 0;
+
+        for (String group_name : group_names) {
+            Group gru = new Group();
+            gru.setName(group_name);
+
+            ch_list = new ArrayList<Child>();
+            for (; j < size; j++) {
+                Child ch = new Child();
+                ch.setName(country_names[j]);
+                ch.setImage(Images[j]);
+                ch_list.add(ch);
+            }
+            gru.setItems(ch_list);
+            list.add(gru);
+
+            size = size + 1;
+        }
+
+        return list;
+    }
+
 }

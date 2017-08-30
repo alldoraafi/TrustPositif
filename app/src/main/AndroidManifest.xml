@@ -28,6 +28,9 @@
         <activity
             android:name=".ScreenSlidePagerActivity"
             android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".faqActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

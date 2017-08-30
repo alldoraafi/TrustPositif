@@ -15,6 +15,5 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Intent i = new Intent(SplashActivity.this, ScreenSlidePagerActivity.class);
         startActivity(i);
-        finish();
     }
 }
