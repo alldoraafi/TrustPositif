@@ -15,18 +15,19 @@ limitations under the License.
 -->
 
 <resources>
-    <string name="app_name">Fragment Basics</string>
+    <string name="app_name">Trust Positif</string>
     <string name="noRequestGPlayService">Aplikasi ini membutuhkan Google Play Services.Pastikan anda telah memasang Google Play Services pada device anda, kemudian jalankan kembali aplikasi ini.</string>
 
     //Ganti email di bawah ini sesuai penerima laporan
-    <string name="recipient_email">alldoraafi@gmail.com</string>
+    <string name="recipient_email">rezasaputra.kks@gmail.com</string>
 
     <string name="noResult">Tidak ada hasil</string>
     <string name="request_cancelled">Permintaan dibatalkan</string>
     <string name="errorRequestCancelled">Terjadi Error:</string>
 
     <string name="send_progress">Mengirimkan pesan ...</string>
-    <string name="email_success">Pesan telah terkirim.</string>
+    <string name="hint_keterangan">Silahkan masukkan keterangan pembantu (opsional)</string>
+    <string name="email_success">Selamat!, pelaporan berhasil dikirim dan selanjutnya akan ditindaklanjuti oleh Kemenkominfo</string>
     <string name="url">http://</string>
 
 </resources>

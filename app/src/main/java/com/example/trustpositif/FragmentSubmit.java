@@ -69,6 +69,7 @@ public class FragmentSubmit extends Fragment implements EasyPermissions.Permissi
     static final int REQUEST_GOOGLE_PLAY_SERVICES = 2002;
     static final int REQUEST_PERMISSION_GET_ACCOUNTS = 2003;
 
+    //    private ArrayList<String> pathList;
     private static final String PREF_ACCOUNT_NAME = "accountName";
     private static final String[] SCOPES = {
             GmailScopes.GMAIL_LABELS,
@@ -87,7 +88,7 @@ public class FragmentSubmit extends Fragment implements EasyPermissions.Permissi
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_submit, container, false);
-        mOutputText = (TextView) view.findViewById(R.id.textView2);
+        mOutputText = (TextView) view.findViewById(R.id.titlekategori);
         mProgress = new ProgressDialog(FragmentSubmit.this.getActivity());
         secondButton = (Button) view.findViewById(R.id.button2);
         secondButton.setOnClickListener(new View.OnClickListener() {
@@ -360,7 +361,13 @@ public class FragmentSubmit extends Fragment implements EasyPermissions.Permissi
             String recipient = getString(R.string.recipient_email);
             String sender = mCredential.getSelectedAccountName();
             String subject = FragmentKategori.getKategori();
-            String body = FragmentURL.getURL() + "\n" + "Keterangan";
+            String isiKeterangan = FragmentKeterangan.getKeterangan();
+            String keterangan;
+            if (isiKeterangan == null || isiKeterangan == "")
+                keterangan = "Tidak ada keterangan";
+            else
+                keterangan = "Keterangan tambahan : " + isiKeterangan;
+            String body = "URL yang dilaporkan : " + FragmentURL.getURL() + "\n\n" + keterangan;
             MimeMessage mimeMessage;
             String response = "";
             try {

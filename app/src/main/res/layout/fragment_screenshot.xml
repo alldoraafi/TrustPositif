@@ -8,7 +8,7 @@
 
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/titlekategori"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
@@ -40,7 +40,7 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/guideline5"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/titlekategori"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@android:color/darker_gray" />
 
@@ -81,7 +81,7 @@
         app:srcCompat="@android:color/darker_gray"
         app:layout_constraintRight_toLeftOf="@+id/guideline6"
         android:layout_marginTop="0dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/titlekategori"
         android:layout_marginRight="0dp"
         android:layout_marginLeft="0dp"
         app:layout_constraintLeft_toLeftOf="@+id/guideline5"
