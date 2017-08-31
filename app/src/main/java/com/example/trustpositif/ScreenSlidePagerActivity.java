@@ -206,20 +206,14 @@ public class ScreenSlidePagerActivity extends FragmentActivity implements EasyPe
         public ScreenSlidePagerAdapter(FragmentManager fm){
             super(fm);
         }
-
-        Fragment url = new FragmentURL();
-        Fragment screenshot = new FragmentScreenshot();
-        Fragment kategori = new FragmentKategori();
-        Fragment keterangan = new FragmentKeterangan();
-        Fragment submit = new FragmentSubmit();
         @Override
         public Fragment getItem(int position){
             switch (position){
-                case 0: return url;
-                case 1: return screenshot;
-                case 2: return kategori;
-                case 3: return keterangan;
-                case 4: return submit;
+                case 0: return new FragmentURL();
+                case 1: return new FragmentScreenshot();
+                case 2: return new FragmentKategori();
+                case 3: return new FragmentKeterangan();
+                case 4: return new FragmentSubmit();
                 default: return new FragmentURL();
             }
         }
@@ -229,11 +223,6 @@ public class ScreenSlidePagerActivity extends FragmentActivity implements EasyPe
             return NUM_PAGES;
         }
     }
-
-    public interface getData{
-        String getValue();
-    }
-
     private void showDialog() {
         final Dialog dialog = new Dialog(ScreenSlidePagerActivity.this);
 
@@ -245,7 +234,7 @@ public class ScreenSlidePagerActivity extends FragmentActivity implements EasyPe
             public void onClick(View view) {
                 // do something here
                 dialog.dismiss();
-                finish();
+                onCreate(null);
             }
         });
         dialog.show();
