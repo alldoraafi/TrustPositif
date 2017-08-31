@@ -496,7 +496,7 @@ public class ScreenSlidePagerActivity extends FragmentActivity implements EasyPe
 
             String recipient = getString(R.string.recipient_email);
             String sender = mCredential.getSelectedAccountName();
-            String subject = FragmentKategori.getKategori();
+            String subject = "ADUAN - " + FragmentKategori.getKategori();
             String isiKeterangan = FragmentKeterangan.getKeterangan();
             String keterangan;
             if (isiKeterangan == null || isiKeterangan == "")
