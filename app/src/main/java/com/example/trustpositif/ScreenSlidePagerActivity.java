@@ -272,6 +272,7 @@ public class ScreenSlidePagerActivity extends FragmentActivity implements EasyPe
                 // do something here
                 dialog.dismiss();
                 finish();
+                startActivity(getIntent());
             }
         });
         dialog.show();

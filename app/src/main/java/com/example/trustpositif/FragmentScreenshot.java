@@ -24,6 +24,7 @@ public class FragmentScreenshot extends Fragment {
     ImageView screenshot;
     TextView text_screenshot;
     private static ArrayList<String> pathList;
+    private ArrayList<Uri> imageUri;
 
 
     @Override
@@ -33,6 +34,7 @@ public class FragmentScreenshot extends Fragment {
         imageView[0] = (ImageView) view.findViewById(R.id.SCView1);
         imageView[1] = (ImageView) view.findViewById(R.id.SCView2);
         imageView[2] = (ImageView) view.findViewById(R.id.SCView3);
+        imageUri = new ArrayList<>();
         screenshot = (ImageView) view.findViewById(R.id.hint_image_screenshot);
         screenshot.setImageResource(R.drawable.screenshot);
         text_screenshot = (TextView) view.findViewById(R.id.text_hint_screenshot);
@@ -57,18 +59,22 @@ public class FragmentScreenshot extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
         super.onActivityResult(requestCode, resultCode, intent);
+
         if (resultCode != RESULT_OK) {
             return;
         }
         if (requestCode == PickImageActivity.PICKER_REQUEST_CODE) {
             pathList = intent.getExtras().getStringArrayList(PickImageActivity.KEY_DATA_RESULT);
             Uri imageUri[] = new Uri[3];
+            for (ImageView x : imageView) {
+                x.setImageResource(0);
+            }
             if (pathList != null && !pathList.isEmpty()) {
                 screenshot.setVisibility(View.INVISIBLE);
                 text_screenshot.setVisibility(View.INVISIBLE);
                 for (int i = 0; i < pathList.size(); i++) {
                     if (pathList.get(i) != null) {
-                        imageUri[i] = Uri.parse(pathList.get(i));
+                        imageUri[i] = (Uri.parse(pathList.get(i)));
                         imageView[i].setImageURI(imageUri[i]);
                     }
                 }
@@ -79,10 +85,10 @@ public class FragmentScreenshot extends Fragment {
         }
     }
 
-    public static ArrayList<String> getImage(){
-        if(!(pathList==null)){
+    public static ArrayList<String> getImage() {
+        if (!(pathList == null)) {
             return pathList;
-        }else {
+        } else {
             ArrayList<String> returnPathlist;
             returnPathlist = new ArrayList<>();
             return returnPathlist;
