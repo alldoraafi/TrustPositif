@@ -127,7 +127,7 @@
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
         android:layout_marginTop="32dp"
-        android:padding="32dp"
+        android:padding="64dp"
         app:layout_constraintBottom_toTopOf="@+id/text_hint_screenshot"
         app:layout_constraintLeft_toLeftOf="@+id/SCView1"
         app:layout_constraintRight_toRightOf="@+id/SCView3"

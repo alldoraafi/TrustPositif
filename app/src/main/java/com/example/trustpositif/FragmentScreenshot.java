@@ -33,7 +33,7 @@ public class FragmentScreenshot extends Fragment {
         imageView[1] = (ImageView) view.findViewById(R.id.SCView2);
         imageView[2] = (ImageView) view.findViewById(R.id.SCView3);
         screenshot = (ImageView) view.findViewById(R.id.hint_image_screenshot);
-        screenshot.setImageResource(R.drawable.ic_launcher);
+        screenshot.setImageResource(R.drawable.screenshot);
         text_screenshot = (TextView) view.findViewById(R.id.text_hint_screenshot);
         Button pickImageButton = (Button) view.findViewById(R.id.pick_image_button);
         pickImageButton.setOnClickListener(new View.OnClickListener() {
