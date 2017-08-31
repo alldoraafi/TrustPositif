@@ -61,31 +61,31 @@ public class FragmentKategori extends Fragment {
     public static String getKategori() {
         switch (selectedKat) {
             case R.id.imageView:
-                return "Pornografi";
+                return "ADUAN - Pornografi";
             case R.id.imageView2:
-                return "Perjudian";
+                return "ADUAN - Perjudian";
             case R.id.imageView3:
-                return "Radikalisme/Terorisme";
+                return "ADUAN - Radikalisme/Terorisme";
             case R.id.imageView4:
-                return "Peninpuan Online";
+                return "ADUAN - Peninpuan Online";
             case R.id.imageView5:
-                return "Investasi Ilegal";
+                return "ADUAN - Investasi Ilegal";
             case R.id.imageView6:
-                return "Obat-obatan dan Kosmetik Ilegal";
+                return "ADUAN - Obat-obatan dan Kosmetik Ilegal";
             case R.id.imageView8:
-                return "Pelanggaran Hak Kekayaan Intelektual";
+                return "ADUAN - Pelanggaran Hak Kekayaan Intelektual";
             case R.id.imageView9:
-                return "Keamanan Internet";
+                return "ADUAN - Keamanan Internet";
             case R.id.imageView10:
-                return "Kekerasan";
+                return "ADUAN - Kekerasan";
             case R.id.imageView11:
-                return "Kekerasan/Pornografi Anak";
+                return "ADUAN - Kekerasan/Pornografi Anak";
             case R.id.imageView12:
-                return "SARA";
+                return "ADUAN - SARA";
             case R.id.imageView13:
-                return "Pencabulan";
+                return "ADUAN - Pencabulan";
             default:
-                return "";
+                return "ADUAN - ";
         }
     }
 }
