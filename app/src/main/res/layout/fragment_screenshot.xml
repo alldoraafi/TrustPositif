@@ -120,12 +120,18 @@
         app:srcCompat="@android:color/darker_gray" />
 
     <ImageView
-        android:id="@+id/imageView14"
+        android:id="@+id/hint_image_screenshot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/screenshot"
-        tools:layout_editor_absoluteX="0dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="32dp"
+        android:padding="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/text_hint_screenshot"
+        app:layout_constraintLeft_toLeftOf="@+id/SCView1"
+        app:layout_constraintRight_toRightOf="@+id/SCView3"
         app:layout_constraintTop_toTopOf="@+id/SCView2"
-        android:layout_marginTop="0dp" />
+        app:srcCompat="@drawable/screenshot" />
 
 </android.support.constraint.ConstraintLayout>

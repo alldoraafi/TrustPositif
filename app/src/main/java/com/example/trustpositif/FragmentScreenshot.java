@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.nileshp.multiphotopicker.photopicker.activity.PickImageActivity;
 
@@ -19,6 +20,8 @@ import static android.app.Activity.RESULT_OK;
 public class FragmentScreenshot extends Fragment {
     View view;
     private ImageView imageView[];
+    ImageView screenshot;
+    TextView text_screenshot;
     private static ArrayList<String> pathList;
 
 
@@ -29,6 +32,9 @@ public class FragmentScreenshot extends Fragment {
         imageView[0] = (ImageView) view.findViewById(R.id.SCView1);
         imageView[1] = (ImageView) view.findViewById(R.id.SCView2);
         imageView[2] = (ImageView) view.findViewById(R.id.SCView3);
+        screenshot = (ImageView) view.findViewById(R.id.hint_image_screenshot);
+        screenshot.setImageResource(R.drawable.ic_launcher);
+        text_screenshot = (TextView) view.findViewById(R.id.text_hint_screenshot);
         Button pickImageButton = (Button) view.findViewById(R.id.pick_image_button);
         pickImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,12 +62,17 @@ public class FragmentScreenshot extends Fragment {
             pathList = intent.getExtras().getStringArrayList(PickImageActivity.KEY_DATA_RESULT);
             Uri imageUri[] = new Uri[3];
             if (pathList != null && !pathList.isEmpty()) {
+                screenshot.setVisibility(View.INVISIBLE);
+                text_screenshot.setVisibility(View.INVISIBLE);
                 for (int i = 0; i < pathList.size(); i++) {
                     if (pathList.get(i) != null) {
                         imageUri[i] = Uri.parse(pathList.get(i));
                         imageView[i].setImageURI(imageUri[i]);
                     }
                 }
+            } else {
+                screenshot.setVisibility(View.VISIBLE);
+                text_screenshot.setVisibility(View.VISIBLE);
             }
         }
     }
