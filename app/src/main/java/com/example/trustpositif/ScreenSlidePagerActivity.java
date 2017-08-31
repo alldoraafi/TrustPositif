@@ -229,6 +229,7 @@ public class ScreenSlidePagerActivity extends FragmentActivity implements EasyPe
         dialog.setTitle("Pelaporan Berhasil");
         dialog.setContentView(R.layout.dialog_konfirmasi);
         Button okButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
+        okButton.getBackground().setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.SRC_ATOP);
         okButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
