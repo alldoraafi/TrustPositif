@@ -1,9 +1,9 @@
 package com.example.trustpositif;
 
 import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import static android.R.attr.id;
+import static android.R.attr.y;
 
 /**
  * Created by AR-Laptop on 8/8/2017.
@@ -21,6 +22,9 @@ public class FragmentKategori extends Fragment{
     private ImageView[] img;
     private int[] png, imgView;
     static int selectedKat;
+    final float SCROLL_TRESHOLD = 10;
+    float mDownX, mDownY;
+    boolean startFlag=false;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
@@ -37,24 +41,22 @@ public class FragmentKategori extends Fragment{
 
                 @Override
                 public boolean onTouch(View v, MotionEvent event) {
-                    selectedKat = v.getId();
-                    switch (event.getAction()) {
-                        case MotionEvent.ACTION_DOWN: {
+                    switch (event.getAction() & MotionEvent.ACTION_MASK) {
+                        case MotionEvent.ACTION_DOWN:
+                            v.setBackgroundColor(Color.rgb(200, 200, 200));
+                            return true;
+                        case MotionEvent.ACTION_CANCEL:
+                            v.setBackgroundColor(Color.rgb(255, 255, 255));
+                            return true;
+                        case MotionEvent.ACTION_UP:
                             for (ImageView i : img) {
                                 i.setBackgroundColor(Color.rgb(255, 255, 255));
                                 i.invalidate();
                             }
-                            ImageView view = (ImageView) v;
-                            view.setBackgroundColor(Color.rgb(175, 175, 175));
-                            view.invalidate();
-                            break;
-                        }
-                        case MotionEvent.ACTION_CANCEL: {
-                            ImageView view = (ImageView) v;
-                            view.getBackground().clearColorFilter();
-                            view.invalidate();
-                            break;
-                        }
+                            v.setBackgroundColor(Color.rgb(175, 175, 175));
+                            v.invalidate();
+                            selectedKat = v.getId();
+                            return true;
                     }
                     return false;
                 }
