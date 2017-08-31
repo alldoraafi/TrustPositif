@@ -26,8 +26,9 @@ limitations under the License.
     <string name="errorRequestCancelled">Terjadi Error:</string>
 
     <string name="send_progress">Mengirimkan pesan ...</string>
-    <string name="hint_keterangan">Silahkan masukkan keterangan pembantu (opsional)</string>
+    <string name="hint_keterangan">Silahkan masukkan keterangan tambahan di sini. (opsional)</string>
     <string name="email_success">Selamat!, pelaporan berhasil dikirim dan selanjutnya akan ditindaklanjuti oleh Kemenkominfo</string>
+    <string name="keterangan_tambahan">Keterangan tambahan yang deskriptif dapat membantu penyidik dalam menangani konten yang dilaporkan.</string>
     <string name="url">http://</string>
 
 </resources>

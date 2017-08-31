@@ -1,6 +1,7 @@
 package com.example.trustpositif;
 
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -33,9 +34,10 @@ public class FragmentScreenshot extends Fragment {
         imageView[1] = (ImageView) view.findViewById(R.id.SCView2);
         imageView[2] = (ImageView) view.findViewById(R.id.SCView3);
         screenshot = (ImageView) view.findViewById(R.id.hint_image_screenshot);
-        screenshot.setImageResource(R.drawable.ic_launcher);
+        screenshot.setImageResource(R.drawable.screenshot);
         text_screenshot = (TextView) view.findViewById(R.id.text_hint_screenshot);
         Button pickImageButton = (Button) view.findViewById(R.id.pick_image_button);
+        pickImageButton.getBackground().setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.SRC_ATOP);
         pickImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

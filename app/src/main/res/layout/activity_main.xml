@@ -14,6 +14,7 @@
 
     <Button
         android:id="@+id/nextButton"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
@@ -24,12 +25,13 @@
         android:elevation="0dp"
         android:text="Lanjutkan"
         android:textColor="@android:color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline7"
-        app:layout_constraintVertical_bias="1.0"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"
@@ -129,7 +131,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:button="@android:color/transparent"
+            android:button="@null"
             android:checked="true"
             android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
             android:gravity="center"
@@ -141,7 +143,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:button="@android:color/transparent"
+            android:button="@null"
             android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
             android:gravity="center"
             android:text="Screenshot" />
@@ -152,7 +154,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:button="@android:color/transparent"
+            android:button="@null"
             android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
             android:gravity="center"
             android:text="Kategori" />
@@ -163,7 +165,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:button="@android:color/transparent"
+            android:button="@null"
             android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
             android:gravity="center"
             android:text="Keterangan" />
