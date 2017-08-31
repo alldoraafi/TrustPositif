@@ -143,7 +143,7 @@ public class ScreenSlidePagerActivity extends FragmentActivity implements EasyPe
                 .setBackOff(new ExponentialBackOff());
 
         trustImg = (ImageView) findViewById(R.id.trustImage);
-        trustImg.setImageResource(R.drawable.trust);
+        trustImg.setImageResource(R.drawable.aduan_konten);
         mPager = (ViewPager) findViewById(R.id.viewPager1);
         mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         mPager.setAdapter(mPagerAdapter);
