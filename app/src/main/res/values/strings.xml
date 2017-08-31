@@ -15,7 +15,7 @@ limitations under the License.
 -->
 
 <resources>
-    <string name="app_name">Trust Positif</string>
+    <string name="app_name">Trust +</string>
     <string name="noRequestGPlayService">Aplikasi ini membutuhkan Google Play Services.Pastikan anda telah memasang Google Play Services pada device anda, kemudian jalankan kembali aplikasi ini.</string>
 
     //Ganti email di bawah ini sesuai penerima laporan
