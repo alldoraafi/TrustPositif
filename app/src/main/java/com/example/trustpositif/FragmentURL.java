@@ -14,9 +14,9 @@ import android.widget.TextView;
 
 public class FragmentURL extends Fragment {
     private static String url;
-    View view;
+    private View view;
     private ImageView mImageView;
-    EditText urlText;
+    private EditText urlText;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
