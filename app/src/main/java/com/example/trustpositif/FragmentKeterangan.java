@@ -55,10 +55,10 @@ public class FragmentKeterangan extends Fragment {
     public static String getKeterangan() {
         String returnKeterangan;
         if (textKeterangan == null) {
-            returnKeterangan = "Keterangan: -";
+            returnKeterangan = "Keterangan : -";
             return returnKeterangan;
         } else {
-            returnKeterangan = "Keterangan: \n" + textKeterangan;
+            returnKeterangan = "Keterangan : \n" + textKeterangan;
             return returnKeterangan;
         }
     }
