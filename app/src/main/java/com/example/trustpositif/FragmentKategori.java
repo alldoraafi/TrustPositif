@@ -85,7 +85,7 @@ public class FragmentKategori extends Fragment {
             case R.id.imageView13:
                 return "ADUAN - Pencabulan";
             default:
-                return "ADUAN - ";
+                return "";
         }
     }
 }
