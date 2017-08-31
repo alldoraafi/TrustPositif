@@ -292,10 +292,9 @@ public class ScreenSlidePagerActivity extends FragmentActivity implements EasyPe
             showMessage("Pastikan anda terhubung dengan internet.");
         } else if (isEmpty(FragmentURL.getURL())) {
             showMessage("Anda belum mengisi URL.");
-        } else if (FragmentScreenshot.getImage().isEmpty()){
+        } else if (FragmentScreenshot.getImage().isEmpty()) {
             showMessage("Tambahkan setidaknya 1 Screenshot.");
-        }
-        else if (isEmpty(FragmentKategori.getKategori())) {
+        } else if (isEmpty(FragmentKategori.getKategori())) {
             showMessage("Anda belum memilih Kategori.");
         } else {
             new ScreenSlidePagerActivity.MakeRequestTask(mCredential).execute();
