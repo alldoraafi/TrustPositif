@@ -129,7 +129,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:button="@android:color/transparent"
+            android:button="@null"
             android:checked="true"
             android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
             android:gravity="center"
@@ -141,7 +141,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:button="@android:color/transparent"
+            android:button="@null"
             android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
             android:gravity="center"
             android:text="Screenshot" />
@@ -152,7 +152,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:button="@android:color/transparent"
+            android:button="@null"
             android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
             android:gravity="center"
             android:text="Kategori" />
@@ -163,7 +163,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:button="@android:color/transparent"
+            android:button="@null"
             android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
             android:gravity="center"
             android:text="Keterangan" />
