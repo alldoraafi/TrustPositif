@@ -8,6 +8,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -162,7 +164,11 @@ public class ScreenSlidePagerActivity extends FragmentActivity implements EasyPe
                 }
                 if (position == 3) {
                     nextButton.setText("Kirim");
-                }else{nextButton.setText("Lanjutkan");}
+                    nextButton.getBackground().setColorFilter(getResources().getColor(R.color.colorGreen), PorterDuff.Mode.SRC_ATOP);
+                } else {
+                    nextButton.setText("Lanjutkan");
+                    nextButton.getBackground().setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.SRC_ATOP);
+                }
             }
 
             @Override
