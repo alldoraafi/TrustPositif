@@ -24,6 +24,7 @@ public class FragmentScreenshot extends Fragment {
     ImageView screenshot;
     TextView text_screenshot;
     private static ArrayList<String> pathList;
+    private ArrayList<Uri> imageUri;
 
 
     @Override
@@ -62,27 +63,39 @@ public class FragmentScreenshot extends Fragment {
         }
         if (requestCode == PickImageActivity.PICKER_REQUEST_CODE) {
             pathList = intent.getExtras().getStringArrayList(PickImageActivity.KEY_DATA_RESULT);
-            Uri imageUri[] = new Uri[3];
-            if (pathList != null && !pathList.isEmpty()) {
+            for (ImageView x : imageView) {
+                x.setImageResource(0);
+            }
+            if (pathList != null) {
                 screenshot.setVisibility(View.INVISIBLE);
                 text_screenshot.setVisibility(View.INVISIBLE);
                 for (int i = 0; i < pathList.size(); i++) {
-                    if (pathList.get(i) != null) {
-                        imageUri[i] = Uri.parse(pathList.get(i));
-                        imageView[i].setImageURI(imageUri[i]);
-                    }
+                    imageUri.add(Uri.parse(pathList.get(i)));
+                    imageView[i].setImageURI(imageUri.get(i));
                 }
-            } else {
+            }
+//            Uri imageUri[] = new Uri[3];
+//            if (pathList != null && !pathList.isEmpty()) {
+//                screenshot.setVisibility(View.INVISIBLE);
+//                text_screenshot.setVisibility(View.INVISIBLE);
+//                for (int i = 0; i < pathList.size(); i++) {
+//                    if (pathList.get(i) != null) {
+//                        imageUri[i] = Uri.parse(pathList.get(i));
+//                        imageView[i].setImageURI(imageUri[i]);
+//                    }
+//                }
+//            }
+            else {
                 screenshot.setVisibility(View.VISIBLE);
                 text_screenshot.setVisibility(View.VISIBLE);
             }
         }
     }
 
-    public static ArrayList<String> getImage(){
-        if(!(pathList==null)){
+    public static ArrayList<String> getImage() {
+        if (!(pathList == null)) {
             return pathList;
-        }else {
+        } else {
             ArrayList<String> returnPathlist;
             returnPathlist = new ArrayList<>();
             return returnPathlist;
