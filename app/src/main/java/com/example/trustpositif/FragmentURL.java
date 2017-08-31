@@ -46,7 +46,7 @@ public class FragmentURL extends Fragment {
 
     public static String getURL() {
         if (!(url == null)) {
-            return url;
+            return "URL yang dilaporkan: " + url;
         } else {
             return "";
         }

@@ -374,7 +374,7 @@ public class FragmentSubmit extends Fragment implements EasyPermissions.Permissi
             String subject = FragmentKategori.getKategori();
             String keterangan = FragmentKeterangan.getKeterangan();
             //Perubahan 31/08/2017 8:54;
-            String body = "URL yang dilaporkan : " + FragmentURL.getURL() + "\n\n" + keterangan;
+            String body = FragmentURL.getURL() + "\n\n" + keterangan;
             MimeMessage mimeMessage;
             String response = "";
             try {
