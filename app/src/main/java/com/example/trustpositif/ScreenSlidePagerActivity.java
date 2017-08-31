@@ -122,6 +122,7 @@ public class ScreenSlidePagerActivity extends FragmentActivity implements EasyPe
         mOutputText = (TextView) findViewById(R.id.titlekategori);
         mProgress = new ProgressDialog(ScreenSlidePagerActivity.this);
         nextButton = (Button) findViewById(R.id.nextButton);
+        nextButton.getBackground().setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.SRC_ATOP);
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
