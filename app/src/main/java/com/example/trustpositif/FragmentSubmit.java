@@ -86,9 +86,10 @@ public class FragmentSubmit extends Fragment implements EasyPermissions.Permissi
     Button secondButton;
     TextView mOutputText;
     ProgressDialog mProgress;
-    private ExpandListAdapter ExpAdapter;
-    private ArrayList<Group> ExpListItems;
-    private ExpandableListView ExpandList;
+    //    private ArrayList<Group> ExpListItems;
+    //    private ExpandableListView ExpandList;
+    //    private ExpandListAdapter ExpAdapter;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -110,10 +111,10 @@ public class FragmentSubmit extends Fragment implements EasyPermissions.Permissi
                 FragmentSubmit.this.getActivity().getApplicationContext(), Arrays.asList(SCOPES))
                 .setBackOff(new ExponentialBackOff());
 
-        ExpandList = (ExpandableListView) view.findViewById(R.id.exp_list);
-        ExpListItems = SetStandardGroups();
-        ExpAdapter = new ExpandListAdapter(FragmentSubmit.this.getActivity(), ExpListItems);
-        ExpandList.setAdapter(ExpAdapter);
+        ExpandableListView expandList = (ExpandableListView) view.findViewById(R.id.exp_list);
+        ArrayList<Group> expListItems = SetStandardGroups();
+        ExpandListAdapter expAdapter = new ExpandListAdapter(FragmentSubmit.this.getActivity(), expListItems);
+        expandList.setAdapter(expAdapter);
 
         return view;
     }
@@ -371,12 +372,8 @@ public class FragmentSubmit extends Fragment implements EasyPermissions.Permissi
             String recipient = getString(R.string.recipient_email);
             String sender = mCredential.getSelectedAccountName();
             String subject = FragmentKategori.getKategori();
-            String isiKeterangan = FragmentKeterangan.getKeterangan();
-            String keterangan;
-            if (isiKeterangan == null || isiKeterangan == "")
-                keterangan = "Tidak ada keterangan";
-            else
-                keterangan = "Keterangan tambahan : " + isiKeterangan;
+            String keterangan = FragmentKeterangan.getKeterangan();
+            //Perubahan 31/08/2017 8:54;
             String body = "URL yang dilaporkan : " + FragmentURL.getURL() + "\n\n" + keterangan;
             MimeMessage mimeMessage;
             String response = "";
@@ -516,7 +513,7 @@ public class FragmentSubmit extends Fragment implements EasyPermissions.Permissi
         int Images[] = {R.drawable.kat, R.drawable.kat2,
                 R.drawable.kat3};
 
-        ArrayList<Group> list = new ArrayList<Group>();
+        ArrayList<Group> list = new ArrayList<>();
 
         ArrayList<Child> ch_list;
 
@@ -527,7 +524,7 @@ public class FragmentSubmit extends Fragment implements EasyPermissions.Permissi
             Group gru = new Group();
             gru.setName(group_name);
 
-            ch_list = new ArrayList<Child>();
+            ch_list = new ArrayList<>();
             for (; j < size; j++) {
                 Child ch = new Child();
                 ch.setName(country_names[j]);
