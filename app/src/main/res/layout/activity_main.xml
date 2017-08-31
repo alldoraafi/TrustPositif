@@ -131,7 +131,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:button="@null" 
+            android:button="@null"
             android:checked="true"
             android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
             android:gravity="center"
