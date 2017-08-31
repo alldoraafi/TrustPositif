@@ -234,6 +234,23 @@ public class ScreenSlidePagerActivity extends FragmentActivity implements EasyPe
         String getValue();
     }
 
+    private void showDialog() {
+        final Dialog dialog = new Dialog(ScreenSlidePagerActivity.this);
+
+        dialog.setTitle("Pelaporan Berhasil");
+        dialog.setContentView(R.layout.dialog_konfirmasi);
+        Button okButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
+        okButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // do something here
+                dialog.dismiss();
+                finish();
+            }
+        });
+        dialog.show();
+    }
+
     private void showMessage(String message) {
         Toast toast = Toast.makeText(ScreenSlidePagerActivity.this, message, Toast.LENGTH_LONG);
         toast.show();
@@ -587,7 +604,7 @@ public class ScreenSlidePagerActivity extends FragmentActivity implements EasyPe
             if (output == null || output.length() == 0) {
                 showMessage(getString(R.string.noResult));
             } else {
-                showMessage(getString(R.string.email_success));
+                showDialog();
             }
         }
 
