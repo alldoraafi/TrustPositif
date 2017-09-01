@@ -25,6 +25,7 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -184,7 +185,9 @@ public class ScreenSlidePagerActivity extends FragmentActivity implements EasyPe
 
             @Override
             public void onPageScrollStateChanged(int state) {
-
+                // Hide the keyboard.
+                ((InputMethodManager) getSystemService(INPUT_METHOD_SERVICE))
+                        .hideSoftInputFromWindow(mPager.getWindowToken(), 0);
             }
         });
 
