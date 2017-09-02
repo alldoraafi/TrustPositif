@@ -258,9 +258,6 @@ public class ScreenSlidePagerActivity extends FragmentActivity implements EasyPe
         }
     }
 
-    public interface getData {
-        String getValue();
-    }
 
     private void showDialog() {
         final Dialog dialog = new Dialog(ScreenSlidePagerActivity.this);

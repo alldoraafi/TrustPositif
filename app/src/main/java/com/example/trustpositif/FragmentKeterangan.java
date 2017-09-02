@@ -1,16 +1,6 @@
 package com.example.trustpositif;
 
-//import android.media.Image;
-//import android.support.annotation.IdRes;
-//import android.support.annotation.Nullable;
-//import android.view.animation.Animation;
-//import android.view.animation.AnimationSet;
-//import android.view.animation.ScaleAnimation;
-//import android.view.animation.TranslateAnimation;
-//import android.widget.Button;
-//import android.widget.ImageView;
-//import android.widget.RadioGroup;
-
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
@@ -18,6 +8,7 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 
 public class FragmentKeterangan extends Fragment {
@@ -30,8 +21,15 @@ public class FragmentKeterangan extends Fragment {
         view = inflater.inflate(R.layout.fragment_keterangan, container, false);
 
         keterangan = (TextView) view.findViewById(R.id.textKeterangan);
-        keterangan.clearFocus();
-
+        keterangan.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    InputMethodManager inputMethodManager =(InputMethodManager) getActivity().getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    inputMethodManager.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                }
+            }
+        });
         keterangan.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
