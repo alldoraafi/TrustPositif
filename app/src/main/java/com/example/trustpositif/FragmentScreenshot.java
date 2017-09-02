@@ -24,20 +24,26 @@ public class FragmentScreenshot extends Fragment {
     ImageView screenshot;
     TextView text_screenshot;
     private static ArrayList<String> pathList;
-    private ArrayList<Uri> imageUri;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_screenshot, container, false);
+
+        //ImageView Screenshot
         imageView = new ImageView[3];
         imageView[0] = (ImageView) view.findViewById(R.id.SCView1);
         imageView[1] = (ImageView) view.findViewById(R.id.SCView2);
         imageView[2] = (ImageView) view.findViewById(R.id.SCView3);
-        imageUri = new ArrayList<>();
+
+        //Ikon screenshot
         screenshot = (ImageView) view.findViewById(R.id.hint_image_screenshot);
         screenshot.setImageResource(R.drawable.screenshot);
+
+        //Text petunjuk
         text_screenshot = (TextView) view.findViewById(R.id.text_hint_screenshot);
+
+        //Tombol pilih gambar
         Button pickImageButton = (Button) view.findViewById(R.id.pick_image_button);
         pickImageButton.getBackground().setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.SRC_ATOP);
         pickImageButton.setOnClickListener(new View.OnClickListener() {
@@ -46,9 +52,11 @@ public class FragmentScreenshot extends Fragment {
                 openGallery();
             }
         });
+
         return view;
     }
 
+    //Membuka galeri dalam ponsel
     private void openGallery() {
         Intent mIntent = new Intent(FragmentScreenshot.this.getActivity(), PickImageActivity.class);
         mIntent.putExtra(PickImageActivity.KEY_LIMIT_MAX_IMAGE, 3);
@@ -56,6 +64,7 @@ public class FragmentScreenshot extends Fragment {
         startActivityForResult(mIntent, PickImageActivity.PICKER_REQUEST_CODE);
     }
 
+    //??
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
         super.onActivityResult(requestCode, resultCode, intent);
@@ -85,6 +94,7 @@ public class FragmentScreenshot extends Fragment {
         }
     }
 
+    //Mendapatkan gambar yang telah dipilih
     public static ArrayList<String> getImage() {
         if (!(pathList == null)) {
             return pathList;

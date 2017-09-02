@@ -7,8 +7,6 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -24,13 +22,11 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -80,8 +76,6 @@ public class ScreenSlidePagerActivity extends FragmentActivity implements EasyPe
     static final int REQUEST_AUTHORIZATION = 2001;
     static final int REQUEST_GOOGLE_PLAY_SERVICES = 2002;
     static final int REQUEST_PERMISSION_GET_ACCOUNTS = 2003;
-
-    //    private ArrayList<String> pathList;
     private static final String PREF_ACCOUNT_NAME = "accountName";
     private static final String[] SCOPES = {
             GmailScopes.GMAIL_LABELS,
@@ -99,7 +93,6 @@ public class ScreenSlidePagerActivity extends FragmentActivity implements EasyPe
     private Button nextButton;
     private ImageView trustImg;
 
-    TextView mOutputText;
     ProgressDialog mProgress;
 
     ImageView faqbutton;
@@ -109,6 +102,7 @@ public class ScreenSlidePagerActivity extends FragmentActivity implements EasyPe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Tombol FAQ
         faqbutton = (ImageView) findViewById(R.id.faqButton);
         faqbutton.setImageResource(R.drawable.faq);
         faqbutton.setOnClickListener(new View.OnClickListener() {
@@ -116,12 +110,13 @@ public class ScreenSlidePagerActivity extends FragmentActivity implements EasyPe
             public void onClick(View v) {
                 Intent i = new Intent(ScreenSlidePagerActivity.this, faqActivity.class);
                 startActivity(i);
-                //finish();
             }
         });
 
-        mOutputText = (TextView) findViewById(R.id.titlekategori);
+        //??
         mProgress = new ProgressDialog(ScreenSlidePagerActivity.this);
+
+        //Tombol Lanjutkan
         nextButton = (Button) findViewById(R.id.nextButton);
         nextButton.getBackground().setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.SRC_ATOP);
         nextButton.setOnClickListener(new View.OnClickListener() {
@@ -139,12 +134,17 @@ public class ScreenSlidePagerActivity extends FragmentActivity implements EasyPe
         });
 
         mProgress.setMessage(getString(R.string.send_progress));
+
+        //Akun GMail
         mCredential = GoogleAccountCredential.usingOAuth2(
                 ScreenSlidePagerActivity.this, Arrays.asList(SCOPES))
                 .setBackOff(new ExponentialBackOff());
 
+        //Logo atas
         trustImg = (ImageView) findViewById(R.id.trustImage);
         trustImg.setImageResource(R.drawable.aduan_konten);
+
+        //PagerAdapter
         mPager = (ViewPager) findViewById(R.id.viewPager1);
         mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         mPager.setAdapter(mPagerAdapter);
@@ -191,6 +191,7 @@ public class ScreenSlidePagerActivity extends FragmentActivity implements EasyPe
             }
         });
 
+        //RadioButton proses pengisian form
         progressGroup = (RadioGroup) findViewById(R.id.progressGroup);
         progressGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -208,7 +209,6 @@ public class ScreenSlidePagerActivity extends FragmentActivity implements EasyPe
                     case R.id.radioButton4:
                         mPager.setCurrentItem(3);
                         break;
-                    //case R.id.radioButton5:mPager.setCurrentItem(4); break;
                 }
             }
         });
@@ -258,7 +258,7 @@ public class ScreenSlidePagerActivity extends FragmentActivity implements EasyPe
         }
     }
 
-
+    //Memunculkan dialog setelah submit
     private void showDialog() {
         final Dialog dialog = new Dialog(ScreenSlidePagerActivity.this);
 
@@ -278,11 +278,13 @@ public class ScreenSlidePagerActivity extends FragmentActivity implements EasyPe
         dialog.show();
     }
 
+
     private void showMessage(String message) {
         Toast toast = Toast.makeText(ScreenSlidePagerActivity.this, message, Toast.LENGTH_LONG);
         toast.show();
     }
 
+    //Membuat dan mengirim email
     private void getResultsFromApi() {
         if (!isGooglePlayServicesAvailable()) {
             acquireGooglePlayServices();
@@ -301,10 +303,12 @@ public class ScreenSlidePagerActivity extends FragmentActivity implements EasyPe
         }
     }
 
+    //Memastikan apakah sebuah string kosong
     private static boolean isEmpty(String text) {
         return text.length() <= 0;
     }
 
+    //Meminta izin untuk menggunakan akun gmail pengguna
     @AfterPermissionGranted(REQUEST_PERMISSION_GET_ACCOUNTS)
     private void chooseAccount() {
         if (EasyPermissions.hasPermissions(ScreenSlidePagerActivity.this,

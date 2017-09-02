@@ -20,6 +20,7 @@ public class FragmentKeterangan extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_keterangan, container, false);
 
+        //TextView Keterangan
         keterangan = (TextView) view.findViewById(R.id.textKeterangan);
         keterangan.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -50,6 +51,7 @@ public class FragmentKeterangan extends Fragment {
         return view;
     }
 
+    //Mendapatkan value Keterangan
     public static String getKeterangan() {
         String returnKeterangan;
         if (textKeterangan == null) {

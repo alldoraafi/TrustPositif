@@ -22,11 +22,15 @@ public class FragmentKategori extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_kategori, container, false);
+
+        //Inisialisasi ImageView dan Ikon Kategori
         img = new ImageView[12];
         png = new int[]{R.drawable.kat, R.drawable.kat2, R.drawable.kat3, R.drawable.kat4, R.drawable.kat5, R.drawable.kat6,
                 R.drawable.kat7, R.drawable.kat8, R.drawable.kat9, R.drawable.kat10, R.drawable.kat11, R.drawable.kat12};
         imgView = new int[]{R.id.imageView, R.id.imageView2, R.id.imageView3, R.id.imageView4, R.id.imageView5, R.id.imageView6,
                 R.id.imageView8, R.id.imageView9, R.id.imageView10, R.id.imageView11, R.id.imageView12, R.id.imageView13};
+
+        //Menetapkan tiap tombol Kategori
         for (int i = 0; i < 12; i++) {
             img[i] = (ImageView) view.findViewById(imgView[i]);
             img[i].setImageResource(png[i]);
@@ -36,10 +40,6 @@ public class FragmentKategori extends Fragment {
                 public boolean onTouch(View v, MotionEvent event) {
                     switch (event.getAction() & MotionEvent.ACTION_MASK) {
                         case MotionEvent.ACTION_DOWN:
-                            v.setBackgroundColor(Color.rgb(200, 200, 200));
-                            return true;
-                        case MotionEvent.ACTION_CANCEL:
-                            v.setBackgroundColor(Color.rgb(255, 255, 255));
                             return true;
                         case MotionEvent.ACTION_UP:
                             for (ImageView i : img) {
@@ -58,6 +58,7 @@ public class FragmentKategori extends Fragment {
         return view;
     }
 
+    //Mendapatkan value dari Kategori yang telah dipilih
     public static String getKategori() {
         switch (selectedKat) {
             case R.id.imageView:
