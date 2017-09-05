@@ -15,8 +15,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.nileshp.multiphotopicker.*;
 import com.nileshp.multiphotopicker.photopicker.activity.PickImageActivity;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.util.ArrayList;
@@ -96,11 +98,11 @@ public class FragmentScreenshot extends Fragment {
                             imageUri[i] = (Uri.parse(pathList.get(i)));
                             imageView[i].setImageURI(imageUri[i]);
                         } else {
-                            peringatan.append("Gambar "+String.valueOf(i)+ "Lebih dari");
+                            peringatan.append("Gambar " + String.valueOf(i) + "Lebih dari 1MB!\n");
                         }
                     }
                 }
-                Toast toast = Toast.makeText(getActivity(), "Total besar gambar: " + String.valueOf(totalSize), Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(getActivity(), peringatan, Toast.LENGTH_SHORT);
                 toast.show();
             } else {
                 screenshot.setVisibility(View.VISIBLE);
