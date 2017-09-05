@@ -24,7 +24,7 @@ public class FaqActivity extends Activity {
         setContentView(R.layout.faq_view);
 
         trustImg = (ImageView) findViewById(R.id.imageView16);
-        trustImg.setImageResource(R.drawable.trust);
+        trustImg.setImageResource(R.drawable.header_aduankonten);
 
         ExpandList = (ExpandableListView) findViewById(R.id.exp_list);
         ExpListItems = SetStandardGroups();

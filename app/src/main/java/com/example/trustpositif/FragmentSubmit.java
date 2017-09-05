@@ -110,12 +110,6 @@ public class FragmentSubmit extends Fragment implements EasyPermissions.Permissi
         mCredential = GoogleAccountCredential.usingOAuth2(
                 FragmentSubmit.this.getActivity().getApplicationContext(), Arrays.asList(SCOPES))
                 .setBackOff(new ExponentialBackOff());
-
-        ExpandableListView expandList = (ExpandableListView) view.findViewById(R.id.exp_list);
-        ArrayList<Group> expListItems = SetStandardGroups();
-        ExpandListAdapter expAdapter = new ExpandListAdapter(FragmentSubmit.this.getActivity(), expListItems);
-        expandList.setAdapter(expAdapter);
-
         return view;
     }
 
@@ -501,43 +495,4 @@ public class FragmentSubmit extends Fragment implements EasyPermissions.Permissi
             }
         }
     }
-
-
-    //set group item
-    public ArrayList<Group> SetStandardGroups() {
-
-        String group_names[] = {"Screenshot 1", "Screenshot 2", "Screenshot 3"};
-
-        String country_names[] = {"Brazil", "Mexico", "Croatia"};
-
-        int Images[] = {R.drawable.kat, R.drawable.kat2,
-                R.drawable.kat3};
-
-        ArrayList<Group> list = new ArrayList<>();
-
-        ArrayList<Child> ch_list;
-
-        int size = 1;
-        int j = 0;
-
-        for (String group_name : group_names) {
-            Group gru = new Group();
-            gru.setName(group_name);
-
-            ch_list = new ArrayList<>();
-            for (; j < size; j++) {
-                Child ch = new Child();
-                ch.setName(country_names[j]);
-                ch.setImage(Images[j]);
-                ch_list.add(ch);
-            }
-            gru.setItems(ch_list);
-            list.add(gru);
-
-            size = size + 1;
-        }
-
-        return list;
-    }
-
 }

@@ -144,7 +144,7 @@ public class ScreenSlidePagerActivity extends FragmentActivity implements EasyPe
 
         //Logo atas
         trustImg = (ImageView) findViewById(R.id.trustImage);
-        trustImg.setImageResource(R.drawable.aduan_konten);
+        trustImg.setImageResource(R.drawable.header_aduankonten);
 
         //PagerAdapter
         mPager = (ViewPager) findViewById(R.id.viewPager1);

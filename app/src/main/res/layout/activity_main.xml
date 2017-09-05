@@ -2,13 +2,15 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
 
     <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/guideline2"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.77" />
 
@@ -34,16 +36,16 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <android.support.constraint.Guideline
+        android:id="@+id/guideline7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/guideline7"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.89" />
 
     <android.support.constraint.Guideline
+        android:id="@+id/guideline8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/guideline8"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.95" />
 
@@ -52,30 +54,33 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="0dp"
         android:background="@android:color/background_light"
         android:paddingBottom="5dp"
         android:paddingTop="5dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline9"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline17"
+        app:layout_constraintRight_toLeftOf="@+id/guideline18"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/trust" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/aduan_konten" />
 
     <ImageView
         android:id="@+id/faqButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline9"
-        app:layout_constraintRight_toRightOf="@+id/trustImage"
+        app:layout_constraintLeft_toRightOf="@+id/trustImage"
+        app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@drawable/faq"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/faq" />
+        android:layout_marginTop="8dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline9"
@@ -171,5 +176,19 @@
             android:text="Keterangan" />
 
     </RadioGroup>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="336dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="48dp" />
 
 </android.support.constraint.ConstraintLayout>
