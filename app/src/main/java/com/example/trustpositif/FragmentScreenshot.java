@@ -89,13 +89,13 @@ public class FragmentScreenshot extends Fragment {
                 x.setImageResource(0);
             }
             if (pathList != null && !pathList.isEmpty()) {
-                screenshot.setVisibility(View.INVISIBLE);
-                text_screenshot.setVisibility(View.INVISIBLE);
                 for (int i = 0; i < pathList.size(); i++) {
                     if (pathList.get(i) != null) {
                         if (checkFileSize(pathList.get(i)) < 1024) {
                             imageUri[i] = (Uri.parse(pathList.get(i)));
                             imageView[i].setImageURI(imageUri[i]);
+                            screenshot.setVisibility(View.INVISIBLE);
+                            text_screenshot.setVisibility(View.INVISIBLE);
                         } else {
                             peringatan.append("Gambar " + String.valueOf(i) + "Lebih dari 1MB!\n");
                             warn = true;
