@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/country_name"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/flag"
         android:layout_marginBottom="14dp"
         android:layout_marginLeft="10dp"

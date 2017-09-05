@@ -1,11 +1,8 @@
 package com.example.trustpositif;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
 
@@ -15,7 +12,7 @@ import java.util.ArrayList;
  * Created by Reza on 30/08/2017.
  */
 
-public class faqActivity extends Activity {
+public class FaqActivity extends Activity {
     private ExpandListAdapter ExpAdapter;
     private ArrayList<Group> ExpListItems;
     private ExpandableListView ExpandList;
@@ -31,16 +28,16 @@ public class faqActivity extends Activity {
 
         ExpandList = (ExpandableListView) findViewById(R.id.exp_list);
         ExpListItems = SetStandardGroups();
-        ExpAdapter = new ExpandListAdapter(faqActivity.this, ExpListItems);
+        ExpAdapter = new ExpandListAdapter(FaqActivity.this, ExpListItems);
         ExpandList.setAdapter(ExpAdapter);
     }
 
     //set group item
     public ArrayList<Group> SetStandardGroups() {
 
-        String group_names[] = {"gini boleh gak?", "gitu boleh gak?", "kalo ngono?"};
+        String group_names[] = {getResources().getString(R.string.Faq1Q), getResources().getString(R.string.Faq2Q), getResources().getString(R.string.Faq3Q)};
 
-        String country_names[] = {"gak boleh", "eh boleh", "mantab abis"};
+        String country_names[] = {getResources().getString(R.string.Faq1A), getResources().getString(R.string.Faq2A), getResources().getString(R.string.Faq3A)};
 
         int Images[] = {R.drawable.kat, R.drawable.kat2,
                 R.drawable.kat3};

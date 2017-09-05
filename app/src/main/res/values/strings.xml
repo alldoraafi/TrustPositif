@@ -31,4 +31,12 @@ limitations under the License.
     <string name="keterangan_tambahan">Keterangan tambahan yang deskriptif dapat membantu penyidik dalam menangani konten yang dilaporkan.</string>
     <string name="url">http://</string>
 
+    <string name="Faq1Q">Bagaimana langkah-langkah pelaporan menggunakan aplikasi ini?</string>
+    <string name="Faq2Q">Aduan/laporan dikirim dalam bentuk apa?</string>
+    <string name="Faq3Q">Apakah semua website yang dilaporkan akan langsung ditapis/diblokir?</string>
+    <string name="Faq1A">1.\tAmbil gambar screenshot dari website yang akan anda laporkan.\n 2.\tIsikan alamat URL dari website yang ingin anda laporkan.\n 3.\tPilih screenshot dari website yang akan anda laporkan.\n4.\tPilih salah satu kategori konten negatif yang ada dalam website yang akan anda laporkan. \n5.\tAnda boleh menambahkan keterangan tentang mengapa anda melaporkan website tersebut. \n6.\tTekan tombol Kirim untuk mengirimkan laporan anda. \n7.\tPilih akun Gmail yang akan anda gunakan untuk mengirim laporan. \n8.\tPelaporan selesai.</string>
+    <string name="Faq2A">Aduan yang dikirim harus ada URL/Link, Screenshot tampilan tambahkan alasan dalam keterangan. Laporan akan dikirim dengan email.</string>
+    <string name="Faq3A">Semua laporan pengaduan akan diverifikasi oleh Tim Aduan Konten. Proses verifikasi dilakukan untuk menguji apakah konten dalam situs atau media sosial itu menyalahi aturan perundangan. Jika ditemukan pelanggaran peraturan perundangan maka Tim Aduan Konten akan meneruskan proses pemblokiran ke penyedia platform. Tim Aduan Konten menetapkan prioritas untuk pelaksanaan pemblokiran dan dipantau oleh Tim Panel Ahli.</string>
+
+
 </resources>
