@@ -6,22 +6,15 @@ package com.example.trustpositif;
 
 public class Child {
 
-    private String Name;
-    private int Image;
+    private String jawaban;
 
-    public String getName() {
-        return Name;
+    public String getJawaban() {
+        return jawaban;
     }
 
-    public void setName(String Name) {
-        this.Name = Name;
+    public void setJawaban(String jawaban) {
+        this.jawaban = jawaban;
     }
 
-    public int getImage() {
-        return Image;
-    }
 
-    public void setImage(int Image) {
-        this.Image = Image;
-    }
 }

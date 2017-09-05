@@ -8,15 +8,15 @@ import java.util.ArrayList;
 
 public class Group {
 
-    private String Name;
+    private String pertanyaan;
     private ArrayList<Child> Items;
 
-    public String getName() {
-        return Name;
+    public String getPertanyaan() {
+        return pertanyaan;
     }
 
-    public void setName(String name) {
-        this.Name = name;
+    public void setPertanyaan(String pertanyaan) {
+        this.pertanyaan = pertanyaan;
     }
 
     public ArrayList<Child> getItems() {

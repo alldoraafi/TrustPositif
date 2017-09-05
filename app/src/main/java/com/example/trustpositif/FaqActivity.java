@@ -32,32 +32,31 @@ public class FaqActivity extends Activity {
         ExpandList.setAdapter(ExpAdapter);
     }
 
-    //set group item
+    //set daftar item untuk F.A.Q
     public ArrayList<Group> SetStandardGroups() {
+        //mengambil array pertanyaan dari resource string
+        String pertanyaan[] = {getResources().getString(R.string.Faq1Q), getResources().getString(R.string.Faq2Q), getResources().getString(R.string.Faq3Q)};
 
-        String group_names[] = {getResources().getString(R.string.Faq1Q), getResources().getString(R.string.Faq2Q), getResources().getString(R.string.Faq3Q)};
-
-        String country_names[] = {getResources().getString(R.string.Faq1A), getResources().getString(R.string.Faq2A), getResources().getString(R.string.Faq3A)};
-
-        int Images[] = {R.drawable.kat, R.drawable.kat2,
-                R.drawable.kat3};
+        //mengambil array jawaban dari resource string
+        String jawaban[] = {getResources().getString(R.string.Faq1A), getResources().getString(R.string.Faq2A), getResources().getString(R.string.Faq3A)};
 
         ArrayList<Group> list = new ArrayList<Group>();
 
         ArrayList<Child> ch_list;
 
+        //variabel size untuk jumlah pertanyaan F.A.Q yang ada
         int size = 1;
         int j = 0;
 
-        for (String group_name : group_names) {
+        //perulangan untuk memasukkan nilai array pertanyaan dan jawaban ke kelas Group dan Child
+        for (String group_name : pertanyaan) {
             Group gru = new Group();
-            gru.setName(group_name);
+            gru.setPertanyaan(group_name);
 
             ch_list = new ArrayList<Child>();
             for (; j < size; j++) {
                 Child ch = new Child();
-                ch.setName(country_names[j]);
-                //ch.setImage(Images[j]);
+                ch.setJawaban(jawaban[j]);
                 ch_list.add(ch);
             }
             gru.setItems(ch_list);
