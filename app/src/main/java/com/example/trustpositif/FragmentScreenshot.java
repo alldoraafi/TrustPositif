@@ -83,8 +83,8 @@ public class FragmentScreenshot extends Fragment {
         if (requestCode == PickImageActivity.PICKER_REQUEST_CODE) {
             pathList = intent.getExtras().getStringArrayList(PickImageActivity.KEY_DATA_RESULT);
             Uri imageUri[] = new Uri[3];
-            long totalSize = 0;
             StringBuilder peringatan = new StringBuilder("");
+            boolean warn = false;
             for (ImageView x : imageView) {
                 x.setImageResource(0);
             }
@@ -93,17 +93,19 @@ public class FragmentScreenshot extends Fragment {
                 text_screenshot.setVisibility(View.INVISIBLE);
                 for (int i = 0; i < pathList.size(); i++) {
                     if (pathList.get(i) != null) {
-                        totalSize += checkFileSize(pathList.get(i));
-                        if (totalSize < 1024) {
+                        if (checkFileSize(pathList.get(i)) < 1024) {
                             imageUri[i] = (Uri.parse(pathList.get(i)));
                             imageView[i].setImageURI(imageUri[i]);
                         } else {
                             peringatan.append("Gambar " + String.valueOf(i) + "Lebih dari 1MB!\n");
+                            warn = true;
                         }
                     }
                 }
-                Toast toast = Toast.makeText(getActivity(), peringatan, Toast.LENGTH_SHORT);
-                toast.show();
+                if (warn) {
+                    Toast toast = Toast.makeText(getActivity(), peringatan, Toast.LENGTH_SHORT);
+                    toast.show();
+                }
             } else {
                 screenshot.setVisibility(View.VISIBLE);
                 text_screenshot.setVisibility(View.VISIBLE);
