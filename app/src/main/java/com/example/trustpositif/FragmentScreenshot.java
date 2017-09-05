@@ -99,6 +99,7 @@ public class FragmentScreenshot extends Fragment {
                         } else {
                             peringatan.append("Gambar " + (String.valueOf(i)+1) + " Lebih dari 1MB!\n");
                             warn = true;
+
                         }
                     }
                 }
