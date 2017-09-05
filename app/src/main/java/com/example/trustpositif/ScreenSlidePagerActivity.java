@@ -126,8 +126,10 @@ public class ScreenSlidePagerActivity extends FragmentActivity implements EasyPe
                     String url = FragmentURL.getURL();
                     //mOutputText.setText(url);
 
-                    getResultsFromApi();
+//                    getResultsFromApi();
+                    startActivityForResult(mCredential.newChooseAccountIntent(), REQUEST_ACCOUNT_PICKER);
                 } else {
+
                     mPager.setCurrentItem(mPager.getCurrentItem() + 1);
                 }
             }
