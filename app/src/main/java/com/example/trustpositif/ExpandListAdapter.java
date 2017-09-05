@@ -45,11 +45,9 @@ public class ExpandListAdapter extends BaseExpandableListAdapter {
                     .getSystemService(context.LAYOUT_INFLATER_SERVICE);
             convertView = infalInflater.inflate(R.layout.child_item, null);
         }
-        TextView tv = (TextView) convertView.findViewById(R.id.country_name);
-        ImageView iv = (ImageView) convertView.findViewById(R.id.flag);
+        TextView tv = (TextView) convertView.findViewById(R.id.teksJawaban);
 
         tv.setText(child.getName().toString());
-        iv.setImageResource(child.getImage());
 
         return convertView;
     }

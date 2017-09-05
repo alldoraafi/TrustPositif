@@ -2,6 +2,7 @@ package com.example.trustpositif;
 
 import android.content.Intent;
 import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,10 +12,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.nileshp.multiphotopicker.photopicker.activity.PickImageActivity;
 
 import java.util.ArrayList;
+
 
 import static android.app.Activity.RESULT_OK;
 

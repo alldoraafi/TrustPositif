@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
     <TextView
         android:id="@+id/titlekategori"
         android:layout_width="0dp"
@@ -20,23 +19,22 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="0dp" />
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
 
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/guideline"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.85" />
+        app:layout_constraintGuide_percent="0.85"
+        tools:layout_editor_absoluteY="435dp"
+        tools:layout_editor_absoluteX="0dp" />
 
     <ImageView
         android:id="@+id/SCView1"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginTop="0dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/guideline5"
@@ -49,10 +47,6 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginTop="0dp"
         android:backgroundTint="@color/colorAccent"
         android:backgroundTintMode="src_atop"
         android:text="Pilih Gambar"
@@ -76,21 +70,27 @@
         app:layout_constraintBottom_toBottomOf="@+id/SCView2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
 
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/guideline5"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.33" />
+        app:layout_constraintGuide_percent="0.33"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="127dp" />
 
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/guideline6"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.66" />
+        app:layout_constraintGuide_percent="0.66"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="254dp" />
 
     <ImageView
         android:id="@+id/SCView2"
@@ -98,22 +98,14 @@
         android:layout_height="0dp"
         app:srcCompat="@android:color/darker_gray"
         app:layout_constraintRight_toLeftOf="@+id/guideline6"
-        android:layout_marginTop="0dp"
         app:layout_constraintTop_toBottomOf="@+id/titlekategori"
-        android:layout_marginRight="0dp"
-        android:layout_marginLeft="0dp"
         app:layout_constraintLeft_toLeftOf="@+id/guideline5"
-        android:layout_marginBottom="0dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline" />
 
     <ImageView
         android:id="@+id/SCView3"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginTop="0dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintLeft_toLeftOf="@+id/guideline6"
@@ -134,6 +126,8 @@
         app:layout_constraintLeft_toLeftOf="@+id/SCView1"
         app:layout_constraintRight_toRightOf="@+id/SCView3"
         app:layout_constraintTop_toTopOf="@+id/SCView2"
-        app:srcCompat="@drawable/screenshot" />
+        app:srcCompat="@drawable/screenshot"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp" />
 
 </android.support.constraint.ConstraintLayout>
