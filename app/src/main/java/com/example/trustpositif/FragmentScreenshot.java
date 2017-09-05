@@ -1,6 +1,8 @@
 package com.example.trustpositif;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -12,8 +14,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+import com.nileshp.multiphotopicker.*;
 import com.nileshp.multiphotopicker.photopicker.activity.PickImageActivity;
-
+import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.util.ArrayList;
 
 
@@ -76,6 +81,8 @@ public class FragmentScreenshot extends Fragment {
         if (requestCode == PickImageActivity.PICKER_REQUEST_CODE) {
             pathList = intent.getExtras().getStringArrayList(PickImageActivity.KEY_DATA_RESULT);
             Uri imageUri[] = new Uri[3];
+            long totalSize = 0;
+            StringBuilder peringatan = new StringBuilder("");
             for (ImageView x : imageView) {
                 x.setImageResource(0);
             }
@@ -84,15 +91,28 @@ public class FragmentScreenshot extends Fragment {
                 text_screenshot.setVisibility(View.INVISIBLE);
                 for (int i = 0; i < pathList.size(); i++) {
                     if (pathList.get(i) != null) {
-                        imageUri[i] = (Uri.parse(pathList.get(i)));
-                        imageView[i].setImageURI(imageUri[i]);
+                        totalSize += checkFileSize(pathList.get(i));
+                        if (totalSize < 1024) {
+                            imageUri[i] = (Uri.parse(pathList.get(i)));
+                            imageView[i].setImageURI(imageUri[i]);
+                        } else {
+                            peringatan.append("Gambar "+String.valueOf(i)+ "Lebih dari");
+                        }
                     }
                 }
+                Toast toast = Toast.makeText(getActivity(), "Total besar gambar: " + String.valueOf(totalSize), Toast.LENGTH_SHORT);
+                toast.show();
             } else {
                 screenshot.setVisibility(View.VISIBLE);
                 text_screenshot.setVisibility(View.VISIBLE);
             }
         }
+    }
+
+    public long checkFileSize(String imageUri) {
+        File file = new File(imageUri);
+        long length = file.length() / 1024;
+        return length;
     }
 
     //Mendapatkan gambar yang telah dipilih
