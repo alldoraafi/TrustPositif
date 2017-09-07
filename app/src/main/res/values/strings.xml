@@ -24,6 +24,7 @@ limitations under the License.
     Ubah text antara > dan < dibawah untuk mengganti email penerima laporan
     -->
     <string name="recipient_email">fauzan.pahlawan@gmail.com</string>
+    <!--Akhir dari bagian email penerima laporan-->
 
     <!--
     Bagian di bawah ini dengan name="screenshot_max_size"
@@ -32,6 +33,7 @@ limitations under the License.
     satuan yang digunakan adalah KB contoh: 1024 KB
     -->
     <string name="screenshot_max_size">1024</string>
+    <!--Akhir dari bagian size maksimum dari Gambar/Screenshot-->
 
     <string name="noResult">Tidak ada hasil</string>
     <string name="request_cancelled">Permintaan dibatalkan</string>
