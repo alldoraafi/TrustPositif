@@ -18,8 +18,20 @@ limitations under the License.
     <string name="app_name">Aduan Konten</string>
     <string name="noRequestGPlayService">Aplikasi ini membutuhkan Google Play Services.Pastikan anda telah memasang Google Play Services pada device anda, kemudian jalankan kembali aplikasi ini.</string>
 
-    //Ganti email di bawah ini sesuai penerima laporan
-    <string name="recipient_email">rezasaputra.kks@gmail.com</string>
+    <!--
+    Bagian di bawah ini dengan name="recipient_email"
+    adalah bagian email penerima laporan aplikasi didefinisikan.
+    Ubah text antara > dan < dibawah untuk mengganti email penerima laporan
+    -->
+    <string name="recipient_email">fauzan.pahlawan@gmail.com</string>
+
+    <!--
+    Bagian di bawah ini dengan name="screenshot_max_size"
+    adalah bagian size maksimum dari Gambar/Screenshot yang dapat di tambahkan oleh pengguna
+    Ubah text antara > dan < di bawah untuk mengganti jumlah maksimum dari size
+    satuan yang digunakan adalah KB contoh: 1024 KB
+    -->
+    <string name="screenshot_max_size">1024</string>
 
     <string name="noResult">Tidak ada hasil</string>
     <string name="request_cancelled">Permintaan dibatalkan</string>

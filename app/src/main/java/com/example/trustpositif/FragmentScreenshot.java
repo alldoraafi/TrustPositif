@@ -91,10 +91,14 @@ public class FragmentScreenshot extends Fragment {
             if (pathList != null && !pathList.isEmpty()) {
                 for (int i = 0; i < pathList.size(); i++) {
                     if (pathList.get(i) != null) {
-                        if (checkFileSize(pathList.get(i)) < 1024) {
+                        if (checkFileSize(pathList.get(i)) <
+                                Long.parseLong(getString(R.string.screenshot_max_size))) {
                             imageUri.add(Uri.parse(pathList.get(i)));
                         } else {
-                            peringatan.append("Gambar " + String.valueOf(i + 1) + " lebih dari 1MB\n");
+                            peringatan.append("Gambar " +
+                                    String.valueOf(i + 1) +
+                                    " lebih dari " + getString(R.string.screenshot_max_size) +
+                                    " KB\n");
                             warn = true;
                         }
                     }
