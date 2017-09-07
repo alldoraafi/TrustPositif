@@ -21,7 +21,7 @@ limitations under the License.
     <!--
     Bagian di bawah ini dengan name="recipient_email"
     adalah bagian email penerima laporan aplikasi didefinisikan.
-    Ubah text antara > dan < dibawah untuk mengganti email penerima laporan
+    Ubah text antara > dan < dibawah untuk mengganti email penerima aduan
     -->
     <string name="recipient_email">fauzan.pahlawan@gmail.com</string>
     <!--Akhir dari bagian email penerima laporan-->
